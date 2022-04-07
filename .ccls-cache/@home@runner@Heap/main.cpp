@@ -9,11 +9,17 @@ int main() {
   int storage[100]; 
   int input;
   int count = 0;
+  int done;
 
-  while(count != 100) {
+  while(done != 0) {
     count++;
     cin >> input;
-    storage[count] = input;
+    if (input != 0) {
+      storage[count] = input;
+    }
+    else {
+      done = 0;
+    }
   }
 
   for (int i = 0; i << count; i++) {
