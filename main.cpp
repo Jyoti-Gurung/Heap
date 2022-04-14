@@ -58,17 +58,17 @@ int main(){
   
 }
 
-// Function to build a Max-Heap from the given array
-void buildHeap(int * input, int n)
+//Skeleton for Max Heap
+void buildHeap(int * input, int size)
 {
     // Index of last non-leaf node
-    int startIdx = (n / 2) - 1;
+    int startIdx = (size / 2) - 1;
  
     // Perform reverse level order traversal
     // from last non-leaf node and heapify
     // each node
     for (int i = startIdx; i >= 0; i--) {
-        heapify(input, n, i);
+        heapify(input, size, i);
     }
 }
 
