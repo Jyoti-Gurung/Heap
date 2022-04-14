@@ -109,3 +109,10 @@ void display(int * input, int size, int depth, int control) {
   cout << endl;
   
 }
+
+/*
+Sources that Helped me:
+1. Aneeq just for looking how he did it: https://github.com/javagoatayowa/New/tree/master/Heap
+2. Geekforgeeks for going through the heapify function:
+
+*/
