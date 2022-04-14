@@ -62,38 +62,36 @@ int main(){
 void buildHeap(int * input, int size)
 {
     // Index of last non-leaf node
-    int startIdx = (size / 2) - 1;
+    int starter = (size / 2) - 1;
  
     // Perform reverse level order traversal
     // from last non-leaf node and heapify
     // each node
-    for (int i = startIdx; i >= 0; i--) {
+    for (int i = starter; i >= 0; i--) {
         heapify(input, size, i);
     }
 }
 
-// To heapify a subtree rooted with node i which is
-// an index in arr[]. N is size of heap
-void heapify(int * input, int n, int i)
+
+void heapify(int * input, int size, int i)
 {
-    int largest = i; // Initialize largest as root
-    int l = 2 * i + 1; // left = 2*i + 1
-    int r = 2 * i + 2; // right = 2*i + 2
+    int root = i; //Slot of largest #
+    int left = 2 * i + 1; 
+    int right = 2 * i + 2;
  
     // If left child is larger than root
-    if (l < n && input[l] > input[largest])
-        largest = l;
+    if (left < size && input[left] > input[root])
+        root = left;
  
-    // If right child is larger than largest so far
-    if (r < n && input[r] > input[largest])
-        largest = r;
+    // If right child is larger than root
+    if (right < size && input[right] > input[root])
+        root = right;
  
     // If largest is not root
-    if (largest != i) {
-        swap(input[i], input[largest]);
- 
-        // Recursively heapify the affected sub-tree
-        heapify(input, n, largest);
+    if (root != i) {
+        swap(input[i], input[root]);
+        //Recursively heapify affected branch/s
+        heapify(input, size, root);
     }
 }
 
