@@ -87,10 +87,9 @@ void heapify(int * input, int size, int i)
     if (right < size && input[right] > input[root])
         root = right;
  
-    // If largest is not root
+    // If largest is not root swap em, and call this function again to heapify branches
     if (root != i) {
         swap(input[i], input[root]);
-        //Recursively heapify affected branch/s
         heapify(input, size, root);
     }
 }

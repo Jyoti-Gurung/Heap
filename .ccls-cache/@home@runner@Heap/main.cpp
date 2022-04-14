@@ -87,10 +87,9 @@ void heapify(int * input, int size, int i)
     if (right < size && input[right] > input[root])
         root = right;
  
-    // If largest is not root
+    // If largest is not root swap em, and call this function again to heapify branches
     if (root != i) {
         swap(input[i], input[root]);
-        //Recursively heapify affected branch/s
         heapify(input, size, root);
     }
 }
@@ -114,5 +113,5 @@ void display(int * input, int size, int depth, int control) {
 Sources that Helped me:
 1. Aneeq just for looking how he did it: https://github.com/javagoatayowa/New/tree/master/Heap
 2. Geekforgeeks for going through the heapify function:
-
+https://www.geeksforgeeks.org/building-heap-from-array/
 */
